@@ -5,47 +5,39 @@
     
     <div v-if="results">
       <h2>Analysis Results</h2>
-      <h3>Word Count</h3>
-      <ul>
-        <li v-for="(count, word) in results.word_count" :key="word">
-          {{ word }}: {{ count }}
-        </li>
-      </ul>
-      <h3>Sentiment Score</h3>
-      <div class="sentiment-meter">
-        <svg viewBox="0 0 100 50">
-          <path d="M10,40 Q50,10 90,40" stroke="black" fill="none"/>
-          <line :x1="needleX1" :y1="needleY1" :x2="needleX2" :y2="needleY2" stroke="red" stroke-width="2"/>
-        </svg>
-        <p>{{ results.sentiment.toFixed(2) }}</p>
+      <div class="results-container">
+        <div class="word-count">
+          <h3>Word Count</h3>
+          <ul class="no-bullets">
+            <li v-for="(count, word) in results.word_count" :key="word">
+              {{ word }}: {{ count }}
+            </li>
+          </ul>
+        </div>
+        <div class="sentiment-score">
+          <h3>Sentiment Score</h3>
+          <div class="sentiment-meter">
+            <SentimentMeter :sentimentScore="results.sentiment.toFixed(2)" />
+            <p>{{ results.sentiment.toFixed(2) }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import SentimentMeter from '@/components/SentimentMeter.vue';
+
 export default {
+  components: {
+    SentimentMeter,
+  },
   data() {
     return {
       userInput: '',
       results: null,
     };
-  },
-  computed: {
-    needleX1() {
-      return 50;
-    },
-    needleY1() {
-      return 40;
-    },
-    needleX2() {
-      const sentiment = this.results ? this.results.sentiment : 0;
-      return 50 + 40 * Math.cos((sentiment + 1) * Math.PI / 2);
-    },
-    needleY2() {
-      const sentiment = this.results ? this.results.sentiment : 0;
-      return 40 - 40 * Math.sin((sentiment + 1) * Math.PI / 2);
-    },
   },
   methods: {
     async analyzeText() {
@@ -67,15 +59,12 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 .text-analyzer {
   max-width: 600px;
   margin: auto;
   text-align: center;
-}
-ul{
-  list-style-type: None;
 }
 textarea {
   width: 100%;
@@ -103,7 +92,15 @@ button {
     box-shadow: 4px 4px black;
   }
 }
-.sentiment-meter {
-  margin: 20px 0;
+.no-bullets {
+  list-style-type: none;
+  padding: 0;
+}
+.results-container {
+  display: flex;
+  justify-content: space-between;
+}
+.word-count, .sentiment-score {
+  width: 48%;
 }
 </style>
