@@ -1,6 +1,6 @@
 <template>
   <div class="text-analyzer">
-    <textarea v-model="userInput" placeholder="Enter text here..." rows="10" cols="50"></textarea>
+    <textarea class="text-area" v-model="userInput" placeholder="Enter text here..." rows="10" cols="50"></textarea>
     <button @click="analyzeText">Analyze</button>
     
     <div v-if="results">
@@ -68,11 +68,13 @@ export default {
 }
 textarea {
   width: 100%;
-  height: 200px;
+  height: 150px;
   font-size: 1.4em;
   text-align: center;
+  background-color: #282a2c;
   margin: 1em 0;
   font-family: "Bangers", cursive;
+  color: white;
   padding: 0.5em 0;
   margin-bottom: 10px;
 }
@@ -97,10 +99,14 @@ button {
   padding: 0;
 }
 .results-container {
+  background-color: #282a2c;
   display: flex;
   justify-content: space-between;
 }
 .word-count, .sentiment-score {
   width: 48%;
+}
+.sentiment-meter {
+  justify-items: center;
 }
 </style>

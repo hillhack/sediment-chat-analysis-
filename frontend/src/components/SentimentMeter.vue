@@ -4,9 +4,9 @@
         <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
           <!-- Semi-circular arc -->
           <path
-            d="M 10,90 A 90,90 0 0,1 190,90"
+            d="M 20,100 A 70,70 0 0,1 184,100"
             stroke="lightgray"
-            stroke-width="10"
+            stroke-width="35"
             fill="none"
           />
           <!-- Needle -->
@@ -68,7 +68,7 @@
       },
       // Labels positions along the arc (Reversed order)
       labelPositions() {
-        const radius = 90; // Radius for labels
+        const radius = 66; // Radius for labels
         const centerX = 100;
         const centerY = 90;
         const angles = [0, 45, 90, 135, 180];  // Angles for label positions
@@ -104,8 +104,13 @@
     font-size: 12px;
     fill: black;
   }
+
+  circle {
+    fill: red;
+  }
   
   line {
+    stroke: red;
     transform-origin: 100px 90px;
   }
 </style>
