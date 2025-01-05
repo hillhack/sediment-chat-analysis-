@@ -2,6 +2,8 @@
 
 The Sediment Analysis Application is a web-based tool designed to analyze user-provided textual input, offering insights into word frequency and sentiment polarity. This project is a Vue.js application that interacts with a Flask backend for text analysis. It allows users to input text and receive word frequency counts and sentiment analysis results.
 
+<img src="./frontend/public/sedimentchat.svg" width="600" height="400" alt="Sediment Chat Preview">
+
 ## Project Structure
 
 ```
