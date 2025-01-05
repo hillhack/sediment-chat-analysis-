@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Sediment Chat Analysis</h1>
+    <h1>Sentiment Chat Analysis</h1>
     <TextAnalyzer />
   </div>
 </template>
