@@ -58,8 +58,8 @@ sediment-chat-analysis/
 ### Frontend Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/hillhack/sediment-chat-analysis-.git
-   cd sediment-chat-analysis/frontend
+   git clone https://github.com/hillhack/sentiment-chat-analysis-.git
+   cd sentiment-chat-analysis/frontend
    ```
 
 2. Install dependencies:
