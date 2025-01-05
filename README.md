@@ -1,8 +1,12 @@
-# Sediment Chat Analysis
+# Sentiment Chat Analysis
 
 The Sentiment Analysis Application is a web-based tool designed to analyze user-provided textual input, offering insights into word frequency and sentiment polarity. This project is a Vue.js application that interacts with a Flask backend for text analysis. It allows users to input text and receive word frequency counts and sentiment analysis results.
+![Screenshot from 2025-01-05 17-20-57](https://github.com/user-attachments/assets/b3bc7479-2961-45bd-86b1-2071ba42d58b)
+![Screenshot from 2025-01-05 17-20-42](https://github.com/user-attachments/assets/1febabd9-0cf8-4d52-8536-5d3ea3d36afd)
+![Screenshot from 2025-01-05 12-57-23](https://github.com/user-attachments/assets/421ba6af-011a-436f-a946-85f5e81bc539)
+![Screenshot from 2025-01-05 12-28-53](https://github.com/user-attachments/assets/dbeef9c8-11ed-4dd9-9c64-f4c97ce27399)
 
-<img src="./frontend/public/sedimentchat.svg" width="600" height="400" alt="Sediment Chat Preview">
+
 
 ## Project Structure
 
